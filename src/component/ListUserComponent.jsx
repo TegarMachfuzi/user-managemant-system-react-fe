@@ -8,6 +8,7 @@ class ListUserComponent extends Component {
             users: []
         }
         this.addUsers = this.addUsers.bind(this);
+        this.updateUsers = this.updateUsers.bind(this);
     }
 
     componentDidMount(){
@@ -19,6 +20,10 @@ class ListUserComponent extends Component {
     addUsers(){
         const { history } = this.props;
         history.push('/add-users')
+    }
+
+    updateUsers(userId){
+        this.props.history.push(`/update-users/${userId}`);
     }
 
   render() {
@@ -46,6 +51,9 @@ class ListUserComponent extends Component {
                                 <td>{user.userId}</td>
                                 <td>{user.username}</td>
                                 <td>{user.password}</td>
+                                <td>
+                                    <button onClick={() => this.updateUsers(user.userId)} className='btn btn-info'>Update</button>
+                                </td>
                             </tr>
                         )
                     }
