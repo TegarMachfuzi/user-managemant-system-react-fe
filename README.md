@@ -6,6 +6,8 @@ Ketika add user baru page masih harus di refresh agar kembali ke page utama(BUG)
 
 Begitu juga ketika save page harus di refresh agar kembali ke page utama(BUG)
 
+Api getById digunakan untuk trigger button select byId
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
