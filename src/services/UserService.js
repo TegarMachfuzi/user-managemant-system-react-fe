@@ -13,6 +13,9 @@ class UserService{
     getUsersById(id){
         return axios.get(USER_API_BASE_URL + '/' + id);
     }
+    updateUsers(users, id){
+        return axios.get(USER_API_BASE_URL + '/' +  id, users)
+    }
 
 }
 

@@ -3,8 +3,8 @@ import UserService from '../services/UserService';
 
 export default class UpdateUserComponent extends Component {
 
-    constructor(proops){
-        super(proops)
+    constructor(props){
+        super(props)
 
         this.state = {
             userId: this.props.match.params.userId,
@@ -31,7 +31,7 @@ export default class UpdateUserComponent extends Component {
         let users = {username: this.state.username, password: this.state.password};
         console.log('users => ' + JSON.stringify(users));
 
-        UserService.createNewUser(users).then(res => {
+        UserService.updateUsers(this.state.userId, users).then(res => {
             this.props.history.push('/users')
         })
     }
